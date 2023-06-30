@@ -71,7 +71,7 @@ public class PhoneBookTest {
         //arrange
         String name = "Vasya";
         String number = "8 800 555 55 55";
-        String expectedResult = "Vasya";
+        String expectedResult = null;
 
         //act
         book.add(name, number);

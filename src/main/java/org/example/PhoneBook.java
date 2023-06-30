@@ -19,6 +19,15 @@ public class PhoneBook {
     }
 
     public String findByNumber(String number) {
+
+        Iterator iterator = phoneBook.entrySet().iterator();
+        while (iterator.hasNext()) {
+            Map.Entry pair = (Map.Entry) iterator.next();
+            if (number == pair.getValue()) {
+                return (String) pair.getKey();
+            }
+        }
+
         return null;
     }
 
