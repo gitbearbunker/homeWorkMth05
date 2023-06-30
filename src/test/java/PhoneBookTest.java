@@ -1,18 +1,24 @@
 import org.example.PhoneBook;
 import org.junit.jupiter.api.*;
+import java.io.*;
+
 
 public class PhoneBookTest {
 
     PhoneBook book;
 
+    private ByteArrayOutputStream output = new ByteArrayOutputStream();
+
     @BeforeEach
     public void set() {
         book = new PhoneBook();
+        System.setOut(new PrintStream(output));
     }
 
     @AfterEach
     public void clean() {
         book = null;
+        System.setOut(null);
     }
 
     @Test
@@ -118,6 +124,27 @@ public class PhoneBookTest {
 
         //assert
         Assertions.assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void printAllNamesTest() {
+        //arrange
+        String name = "Vasya";
+        String number = "8 800 555 55 55";
+
+        String name1 = "Petya";
+        String number1 = "8 800 555 55 55";
+
+        String expectedResult = "Vasya\n\rPetya\n\r";
+        //act
+        book.add(name, number);
+        book.add(name1, number1);
+
+        book.printAllNames();
+
+        //assert
+        Assertions.assertEquals(expectedResult, output.toString());
+
     }
 
 }
