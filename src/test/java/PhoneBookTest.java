@@ -109,7 +109,7 @@ public class PhoneBookTest {
         String name1 = "Petya";
         String number1 = "8 800 555 55 55";
 
-        String expectedResult = "8 800 555 55 57";
+        String expectedResult = null;
         //act
         book.add(name, number);
         book.add(name1, number1);
