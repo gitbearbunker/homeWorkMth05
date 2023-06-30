@@ -129,16 +129,25 @@ public class PhoneBookTest {
     @Test
     public void printAllNamesTest() {
         //arrange
-        String name = "Vasya";
+        String name = "Ab";
         String number = "8 800 555 55 55";
 
-        String name1 = "Petya";
+        String name1 = "Aab";
         String number1 = "8 800 555 55 55";
 
-        String expectedResult = "Vasya\r\nPetya\r\n";
+        String name2 = "Aaab";
+        String number2 = "8 800 555 55 55";
+
+        String name3 = "B";
+        String number3 = "8 800 555 55 55";
+
+        String expectedResult = "Aaab\r\nAab\r\nAb\r\nB\r\n";
+
         //act
         book.add(name, number);
         book.add(name1, number1);
+        book.add(name2, number2);
+        book.add(name3, number3);
 
         book.printAllNames();
 

@@ -4,7 +4,7 @@ import java.util.*;
 
 public class PhoneBook {
 
-    Map<String, String> phoneBook = new HashMap<>();
+    Map<String, String> phoneBook = new TreeMap<>();
 
     public int add(String name, String number) {
         if (phoneBook.isEmpty() | !phoneBook.containsKey(name)) {
@@ -42,8 +42,7 @@ public class PhoneBook {
 
     public void printAllNames() {
 
-        phoneBook.entrySet()
-                .forEach(x -> {
+        phoneBook.entrySet().forEach(x -> {
                     System.out.println(x.getKey());
                 });
 
