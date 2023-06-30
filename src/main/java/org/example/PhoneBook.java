@@ -42,6 +42,10 @@ public class PhoneBook {
 
     public void printAllNames() {
 
+        phoneBook.entrySet()
+                .forEach(x -> {
+                    System.out.println(x.getKey());
+                });
 
     }
 

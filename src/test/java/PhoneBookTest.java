@@ -7,7 +7,7 @@ public class PhoneBookTest {
 
     PhoneBook book;
 
-    private ByteArrayOutputStream output = new ByteArrayOutputStream();
+    private final ByteArrayOutputStream output = new ByteArrayOutputStream();
 
     @BeforeEach
     public void set() {
@@ -135,7 +135,7 @@ public class PhoneBookTest {
         String name1 = "Petya";
         String number1 = "8 800 555 55 55";
 
-        String expectedResult = "Vasya\n\rPetya\n\r";
+        String expectedResult = "Vasya\r\nPetya\r\n";
         //act
         book.add(name, number);
         book.add(name1, number1);
